@@ -165,16 +165,16 @@ Although the system performs well for many coding tasks, some limitations exist:
 
 
 code-snippet-generator
-├── app.py
-├── requirements.txt
-├── README.md
-├── llm
-│   ├── llm_client.py
-│   └── prompt_builder.py
-├── storage
-│   └── chat_store.py
-└── data
-    └── conversations.json
+├── [app.py](./app.py)
+├── [requirements.txt](./requirements.txt)
+├── [README.md](./README.md)
+├── llm/
+│   ├── [llm_client.py](./llm/llm_client.py)
+│   └── [prompt_builder.py](./llm/prompt_builder.py)
+├── storage/
+│   └── [chat_store.py](./storage/chat_store.py)
+└── data/
+    └── [conversations.json](./data/conversations.json)
 
 
 ---
