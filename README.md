@@ -1,6 +1,7 @@
 # AI Code Snippet Generator Agent
 
 This project is a **Streamlit-based AI code assistant** that generates code snippets using an LLM.
+live Demo : https://code-snippet-generator-27mywk8qvg827jmefv96ce.streamlit.app/
 
 ## Features
 
