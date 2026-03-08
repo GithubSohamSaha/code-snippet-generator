@@ -164,21 +164,7 @@ Although the system performs well for many coding tasks, some limitations exist:
 # 📁 Project Structure
 
 
-code-snippet-generator
-│
-├── app.py
-├── requirements.txt
-├── README.md
-│
-├── llm
-│ ├── llm_client.py
-│ └── prompt_builder.py
-│
-├── storage
-│ └── chat_store.py
-│
-└── data
-└── conversations.json
+code-snippet-generator│├── app.py├── requirements.txt├── README.md│├── llm│ ├── llm\_client.py│ └── prompt\_builder.py│├── storage│ └── chat\_store.py│└── data└── conversations.json
 
 
 ---
