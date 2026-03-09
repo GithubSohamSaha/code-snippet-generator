@@ -44,6 +44,12 @@ if "chat_id" not in st.session_state:
         st.session_state.chat_id = new_id
 
 chat_id = st.session_state.chat_id
+if chat_id not in chats:
+    new_id = str(uuid.uuid4())
+    chats[new_id] = {"title": "New Chat", "messages": []}
+    save_chats(chats)
+    st.session_state.chat_id = new_id
+    chat_id = new_id
 
 # --------------------------------------------------
 # SIDEBAR
