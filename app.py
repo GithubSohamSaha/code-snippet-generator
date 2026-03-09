@@ -178,19 +178,28 @@ user_input = st.text_area(
     placeholder="Example: Write a program to print hello 100 times"
 )
 
-if st.button("Generate Code", key="generate_btn") and user_input.strip():
+if st.button("Generate Code", key="generate_btn"):
 
-    with st.spinner("🧠 Generating code... Please wait"):
-        prompt = build_prompt(user_input, language)
-        response = generate_code(prompt)
+    if not user_input.strip():
+        st.warning("Please enter a prompt.")
+    else:
+        try:
+            with st.spinner("🧠 Generating code... Please wait"):
+                prompt = build_prompt(user_input, language)
+                response = generate_code(prompt)
 
-    if chats[chat_id]["title"] == "New Chat":
-        chats[chat_id]["title"] = user_input[:35]
+            st.write("DEBUG RESPONSE:", response)  # temporary debug
 
-    chats[chat_id]["messages"].append({
-        "user": user_input,
-        "bot": response
-    })
+            if chats[chat_id]["title"] == "New Chat":
+                chats[chat_id]["title"] = user_input[:35]
 
-    save_chats(chats)
-    st.rerun()
+            chats[chat_id]["messages"].append({
+                "user": user_input,
+                "bot": response
+            })
+
+            save_chats(chats)
+            st.rerun()
+
+        except Exception as e:
+            st.error(f"Error during generation: {e}")
